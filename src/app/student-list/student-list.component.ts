@@ -13,8 +13,19 @@ export class StudentListComponent implements OnInit {
   constructor(private studentService: StudentService) { }
 
   ngOnInit(): void {
+    this.loadStudents();
+  }
+
+  loadStudents() {
     this.studentService.getStudents().subscribe((students) => {
       this.students = students;
+    });
+  }
+
+  deleteStudent(studentId: number) {
+    this.studentService.deleteStudent(studentId).subscribe(() => {
+      // After successful deletion, update the list of students
+      this.loadStudents();
     });
   }
 }

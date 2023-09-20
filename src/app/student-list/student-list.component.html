@@ -11,14 +11,16 @@
       </thead>
       <tbody>
         <tr *ngFor="let student of students">
-          <td>{{ student.id }}</td>
+          <td routerLink="/students/edit/{{student.id}}" >{{ student.id }}</td>
           <td>{{ student.name }}</td>
           <td>{{ student.email }}</td>
+          <td ><button routerLink="/students/edit/{{student.id}}"> Edit </button></td>
+          <td > <button class="delete-button" (click)="deleteStudent(student.id)">Delete</button></td>
           <!-- Add other table data as needed -->
         </tr>
       </tbody>
     </table>
   </div>
   
-<a routerLink="/students/create" class="btn btn-primary">Add Student</a>
+<button routerLink="/students/create" class="btn btn-primary">Add Student</button>
 <!-- Add edit links for each student as needed -->

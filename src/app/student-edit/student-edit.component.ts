@@ -20,6 +20,7 @@ export class StudentEditComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.studentId = +params['id'];
+      this.editedStudent.id = params['id'];
       // Fetch the student data by ID and set it to the editedStudent object
       // this.studentService.getStudentById(this.studentId).subscribe((student) => {
       //   this.editedStudent = student;
