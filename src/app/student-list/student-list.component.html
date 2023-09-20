@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>Student List</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <!-- Add other table headers as needed -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <td>{{ student.id }}</td>
+          <td>{{ student.name }}</td>
+          <td>{{ student.email }}</td>
+          <!-- Add other table data as needed -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+<a routerLink="/students/create" class="btn btn-primary">Add Student</a>
+<!-- Add edit links for each student as needed -->
